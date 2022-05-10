@@ -51,17 +51,17 @@ NHN Cloudは定期的にインターネットゲートウェイサーバーの�
 
 1. メンテナンス対象インターネットゲートウェイを確認します。
   名前の横に**!再起動**ボタンがあるインターネットゲートウェイがメンテナンス対象インターネットゲートウェイです。
-   ![インターネットゲートウェイメンテナンスイメージ001](http://static.toastoven.net/prod_vpc/ConsoleGuide/ig_planned_migration_guide-ko-001.png)
+   ![インターネットゲートウェイメンテナンスイメージ001](http://static.toastoven.net/prod_vpc/ConsoleGuide/ig_planned_migration_guide-jp-001.png)
    **!再起動**ボタンの上にマウスオーバーすると詳細なメンテナンススケジュールを確認できます。 
-   ![インターネットゲートウェイメンテナンスイメージ002](http://static.toastoven.net/prod_vpc/ConsoleGuide/ig_planned_migration_guide-ko-002.png)
+   ![インターネットゲートウェイメンテナンスイメージ002](http://static.toastoven.net/prod_vpc/ConsoleGuide/ig_planned_migration_guide-jp-002.png)
 2. メンテナンス対象インターネットゲートウェイを選択し、名前の横にある**!再起動**ボタンをクリックします。
   再起動が完了するまで、メンテナンス対象インターネットゲートウェイを使用するインスタンスのインターネット接続が遮断されるため、サービスに影響を与えない時間に実行してください。
    ただし、Floating IPを接続したインスタンスはインターネットゲートウェイ再起動の影響を受けません。
 3. インターネットゲートウェイ再起動を確認するウィンドウが表示されたら**確認**ボタンをクリックします。
-   ![インターネットゲートウェイメンテナンスイメージ003](http://static.toastoven.net/prod_vpc/ConsoleGuide/ig_planned_migration_guide-ko-003.png)
+   ![インターネットゲートウェイメンテナンスイメージ003](http://static.toastoven.net/prod_vpc/ConsoleGuide/ig_planned_migration_guide-jp-003.png)
 4. ステータスインジケータが緑色に変わり、**!再起動**ボタンが消えるまで待機します。
   インターネットゲートウェイステータスインジケータが変わらない場合や**!再起動**ボタンが消えない場合は「更新」をお試しください。
-   ![インターネットゲートウェイメンテナンスイメージ004](http://static.toastoven.net/prod_vpc/ConsoleGuide/ig_planned_migration_guide-ko-004.png)
+   ![インターネットゲートウェイメンテナンスイメージ004](http://static.toastoven.net/prod_vpc/ConsoleGuide/ig_planned_migration_guide-jp-004.png)
 
 インターネットゲートウェイの再起動中は、該当インターネットゲートウェイを操作できません。
 インターネットゲートウェイが正常に再起動しない場合は、自動的に管理者に報告され、NHN Cloudから別途連絡します。

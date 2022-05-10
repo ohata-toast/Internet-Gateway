@@ -51,17 +51,17 @@ Go to the project where the internet gateway specified as a maintenance target i
 
 1. Check the internet gateway that is a maintenance target.
    An internet gateway with the **! Restart** button next to its name is the maintenance target.
-   ![Internet gateway maintenance image 001](http://static.toastoven.net/prod_vpc/ConsoleGuide/ig_planned_migration_guide-ko-001.png)
+   ![Internet gateway maintenance image 001](http://static.toastoven.net/prod_vpc/ConsoleGuide/ig_planned_migration_guide-en-001.png)
    You can check the detailed maintenance schedule by hovering the mouse cursor over the **! Restart** button.
-   ![Internet gateway maintenance image 002](http://static.toastoven.net/prod_vpc/ConsoleGuide/ig_planned_migration_guide-ko-002.png)
+   ![Internet gateway maintenance image 002](http://static.toastoven.net/prod_vpc/ConsoleGuide/ig_planned_migration_guide-en-002.png)
 2. Select the maintenance target internet gateway and click the **! Restart** button next to its name.
    Internet connection of the instance using the maintenance target internet gateway is blocked until the restart is complete, so it is recommended to perform maintenance during the time when impact on the service operation is minimal.
    However, instances that are associated with floating IPs are not affected by the restart of the internet gateway.
 3. When the window asking whether to restart the internet gateway appears, click **Confirm**.
-   ![Internet gateway maintenance image 003](http://static.toastoven.net/prod_vpc/ConsoleGuide/ig_planned_migration_guide-ko-003.png)
+   ![Internet gateway maintenance image 003](http://static.toastoven.net/prod_vpc/ConsoleGuide/ig_planned_migration_guide-en-003.png)
 4. Wait until the status indicator turns green and the **! Restart** button disappears.
    If the internet gateway status indicator does not change or the **! Restart** button does not disappear, try 'Refresh'.
-   ![Internet gateway maintenance image 004](http://static.toastoven.net/prod_vpc/ConsoleGuide/ig_planned_migration_guide-ko-004.png)
+   ![Internet gateway maintenance image 004](http://static.toastoven.net/prod_vpc/ConsoleGuide/ig_planned_migration_guide-en-004.png)
 
 The internet gateway becomes inoperable while it is being restarted.
 If the internet gateway is not restarted normally, the issue will be automatically reported to the administrator and NHN Cloud will contact you separately.
