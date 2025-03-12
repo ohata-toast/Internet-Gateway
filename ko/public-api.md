@@ -2,7 +2,7 @@
 
 API를 사용하려면 API 엔드포인트와 토큰 등이 필요합니다. [API 사용 준비](/Compute/Compute/ko/identity-api/)를 참고하여 API 사용에 필요한 정보를 준비합니다.
 
-VPC API는 `network` 타입 엔드포인트를 이용합니다. 정확한 엔드포인트는 토큰 발급 응답의 `serviceCatalog`를 참조합니다.
+인터넷 게이트웨이 API는 `network` 타입 엔드포인트를 이용합니다. 정확한 엔드포인트는 토큰 발급 응답의 `serviceCatalog`를 참조합니다.
 
 | 타입 | 리전 | 엔드포인트 |
 |---|---|---|
@@ -51,7 +51,7 @@ X-Auth-Token: {tokenId}
 | internetgateway.create_time | Body | Date | 인터넷 게이트웨이 생성 시간(UTC) |
 | internetgateway.tenant_id | Body | String | 인터넷 게이트웨이가 속한 테넌트 ID |
 | internetgateway.migrate_status | Body | String | 점검으로 인한 인터넷 게이트웨이 이동 시 처리 상태<br>`none`: 이동중이지 않거나 이동이 완료된 상태<br>`unbinding_progress`: 기존 인터넷 게이트웨이 서버에서 제거 중인 상태<br>`unbinding_error`: 기존 인터넷 게이트웨이 서버에서 제거 중 오류 발생<br>`binding_progress`: 신규 인터넷 게이트웨이 서버에서 구성 중인 상태<br>`binding_error`: 신규 인터넷 게이트웨이 서버에서 구성 중 오류 발생 |
-| internetgateway.migrate_error | Body | String | 점검이로 인한 인터넷 게이트웨이 이동 중 오류 발생 시 오류 메시지 |
+| internetgateway.migrate_error | Body | String | 점검으로 인한 인터넷 게이트웨이 이동 중 오류 발생 시 오류 메시지 |
 
 <details><summary>예시</summary>
 <p>
@@ -108,7 +108,7 @@ X-Auth-Token: {tokenId}
 | internetgateway.create_time | Body | Date | 인터넷 게이트웨이 생성 시간(UTC) |
 | internetgateway.tenant_id | Body | String | 인터넷 게이트웨이가 속한 테넌트 ID |
 | internetgateway.migrate_status | Body | String | 점검으로 인한 인터넷 게이트웨이 이동 시 처리 상태<br>`none`: 이동중이지 않거나 이동이 완료된 상태<br>`unbinding_progress`: 기존 인터넷 게이트웨이 서버에서 제거 중인 상태<br>`unbinding_error`: 기존 인터넷 게이트웨이 서버에서 제거 중 오류 발생<br>`binding_progress`: 신규 인터넷 게이트웨이 서버에서 구성 중인 상태<br>`binding_error`: 신규 인터넷 게이트웨이 서버에서 구성 중 오류 발생 |
-| internetgateway.migrate_error | Body | String | 점검이로 인한 인터넷 게이트웨이 이동 중 오류 발생 시 오류 메시지.  |
+| internetgateway.migrate_error | Body | String | 점검으로 인한 인터넷 게이트웨이 이동 중 오류 발생 시 오류 메시지.  |
 
 <details><summary>예시</summary>
 <p>
@@ -165,7 +165,7 @@ X-Auth-Token: {tokenId}
 | internetgateway.create_time | Body | Date | 인터넷 게이트웨이 생성 시간(UTC) |
 | internetgateway.tenant_id | Body | String | 인터넷 게이트웨이가 속한 테넌트 ID |
 | internetgateway.migrate_status | Body | String | 점검으로 인한 인터넷 게이트웨이 이동 시 처리 상태<br>`none`: 이동중이지 않거나 이동이 완료된 상태<br>`unbinding_progress`: 기존 인터넷 게이트웨이 서버에서 제거 중인 상태<br>`unbinding_error`: 기존 인터넷 게이트웨이 서버에서 제거 중 오류 발생<br>`binding_progress`: 신규 인터넷 게이트웨이 서버에서 구성 중인 상태<br>`binding_error`: 신규 인터넷 게이트웨이 서버에서 구성 중 오류 발생 |
-| internetgateway.migrate_error | Body | String | 점검이로 인한 인터넷 게이트웨이 이동 중 오류 발생 시 오류 메시지.  |
+| internetgateway.migrate_error | Body | String | 점검으로 인한 인터넷 게이트웨이 이동 중 오류 발생 시 오류 메시지.  |
 
 <details><summary>예시</summary>
 <p>
