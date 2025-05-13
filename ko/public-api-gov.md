@@ -13,7 +13,7 @@ API 응답에 가이드에 명시되지 않은 필드가 나타날 수 있습니
 ## 인터넷 게이트웨이
 ### 외부 네트워크 ID 조회하기
 인터넷 게이트웨이를 생성할 때, 인터넷 게이트웨이를 통해 연결할 외부 네트워크의 ID를 지정해야 합니다.
-사용할 수 있는 외부 네트워크는 [VPC 목록 보기 API](/Network/VPC/ko/public-api/#vpc_1)에 `router:external=true` 쿼리를 지정하여 조회할 수 있습니다.
+사용할 수 있는 외부 네트워크는 [VPC 목록 보기 API](/Network/VPC/ko/public-api-gov/#vpc_1)에 `router:external=true` 쿼리를 지정하여 조회할 수 있습니다.
 ```
 GET /v2.0/vpcs?router:external=true
 ```
@@ -46,11 +46,11 @@ X-Auth-Token: {tokenId}
 | internetgateway.id | Body | UUID | 인터넷 게이트웨이 ID |
 | internetgateway.name | Body | String | 인터넷 게이트웨이 이름 |
 | internetgateway.external_network_id | Body | UUID | 인터넷 게이트웨이가 연결한 외부 네트워크의 ID |
-| internetgateway.routingtable_id | Body | UUID | 라우팅 테이블과 연결되어 있을 때, 인터넷 게이트웨이를 연결한 라우팅 테이블 ID |
-| internetgateway.state | Body | String | 인터넷 게이트웨이의 상태. <br>`available`: 정상 상태<br>`unavailable`: 라우팅 테이블에 연결되지 않은 미사용 상태<br>`migrating`: 점검을 위해 다른 인터넷 게이트웨이 서버로 이동중인 상태<br>`error`:  라우팅 테이블에 연결되었으나 정상 사용이 불가능한 상태|
+| internetgateway.routingtable_id | Body | UUID | 라우팅 테이블과 연결되어 있을 때 인터넷 게이트웨이를 연결한 라우팅 테이블 ID |
+| internetgateway.state | Body | String | 인터넷 게이트웨이의 상태. <br>`available`: 정상 상태<br>`unavailable`: 라우팅 테이블에 연결되지 않은 미사용 상태<br>`migrating`: 점검을 위해 다른 인터넷 게이트웨이 서버로 이동 중인 상태<br>`error`:  라우팅 테이블에 연결되었으나 정상 사용이 불가능한 상태|
 | internetgateway.create_time | Body | Date | 인터넷 게이트웨이 생성 시간(UTC) |
 | internetgateway.tenant_id | Body | String | 인터넷 게이트웨이가 속한 테넌트 ID |
-| internetgateway.migrate_status | Body | String | 점검으로 인한 인터넷 게이트웨이 이동 시 처리 상태<br>`none`: 이동중이지 않거나 이동이 완료된 상태<br>`unbinding_progress`: 기존 인터넷 게이트웨이 서버에서 제거 중인 상태<br>`unbinding_error`: 기존 인터넷 게이트웨이 서버에서 제거 중 오류 발생<br>`binding_progress`: 신규 인터넷 게이트웨이 서버에서 구성 중인 상태<br>`binding_error`: 신규 인터넷 게이트웨이 서버에서 구성 중 오류 발생 |
+| internetgateway.migrate_status | Body | String | 점검으로 인한 인터넷 게이트웨이 이동 시 처리 상태<br>`none`: 이동 중이지 않거나 이동이 완료된 상태<br>`unbinding_progress`: 기존 인터넷 게이트웨이 서버에서 제거 중인 상태<br>`unbinding_error`: 기존 인터넷 게이트웨이 서버에서 제거 중 오류 발생<br>`binding_progress`: 신규 인터넷 게이트웨이 서버에서 구성 중인 상태<br>`binding_error`: 신규 인터넷 게이트웨이 서버에서 구성 중 오류 발생 |
 | internetgateway.migrate_error | Body | String | 점검으로 인한 인터넷 게이트웨이 이동 중 오류 발생 시 오류 메시지 |
 
 <details><summary>예시</summary>
@@ -103,12 +103,12 @@ X-Auth-Token: {tokenId}
 | internetgateway.id | Body | UUID | 인터넷 게이트웨이 ID |
 | internetgateway.name | Body | String | 인터넷 게이트웨이 이름 |
 | internetgateway.external_network_id | Body | UUID | 인터넷 게이트웨이가 연결한 외부 네트워크의 ID |
-| internetgateway.routingtable_id | Body | UUID | 라우팅 테이블과 연결되어 있을 때, 인터넷 게이트웨이를 연결한 라우팅 테이블 ID |
-| internetgateway.state | Body | String | 인터넷 게이트웨이의 상태. <br>`available`: 정상 상태<br>`unavailable`: 라우팅 테이블에 연결되지 않은 미사용 상태<br>`migrating`: 점검을 위해 다른 인터넷 게이트웨이 서버로 이동중인 상태<br>`error`:  라우팅 테이블에 연결되었으나 정상 사용이 불가능한 상태|
+| internetgateway.routingtable_id | Body | UUID | 라우팅 테이블과 연결되어 있을 때 인터넷 게이트웨이를 연결한 라우팅 테이블 ID |
+| internetgateway.state | Body | String | 인터넷 게이트웨이의 상태. <br>`available`: 정상 상태<br>`unavailable`: 라우팅 테이블에 연결되지 않은 미사용 상태<br>`migrating`: 점검을 위해 다른 인터넷 게이트웨이 서버로 이동 중인 상태<br>`error`:  라우팅 테이블에 연결되었으나 정상 사용이 불가능한 상태|
 | internetgateway.create_time | Body | Date | 인터넷 게이트웨이 생성 시간(UTC) |
 | internetgateway.tenant_id | Body | String | 인터넷 게이트웨이가 속한 테넌트 ID |
-| internetgateway.migrate_status | Body | String | 점검으로 인한 인터넷 게이트웨이 이동 시 처리 상태<br>`none`: 이동중이지 않거나 이동이 완료된 상태<br>`unbinding_progress`: 기존 인터넷 게이트웨이 서버에서 제거 중인 상태<br>`unbinding_error`: 기존 인터넷 게이트웨이 서버에서 제거 중 오류 발생<br>`binding_progress`: 신규 인터넷 게이트웨이 서버에서 구성 중인 상태<br>`binding_error`: 신규 인터넷 게이트웨이 서버에서 구성 중 오류 발생 |
-| internetgateway.migrate_error | Body | String | 점검으로 인한 인터넷 게이트웨이 이동 중 오류 발생 시 오류 메시지.  |
+| internetgateway.migrate_status | Body | String | 점검으로 인한 인터넷 게이트웨이 이동 시 처리 상태<br>`none`: 이동 중이지 않거나 이동이 완료된 상태<br>`unbinding_progress`: 기존 인터넷 게이트웨이 서버에서 제거 중인 상태<br>`unbinding_error`: 기존 인터넷 게이트웨이 서버에서 제거 중 오류 발생<br>`binding_progress`: 신규 인터넷 게이트웨이 서버에서 구성 중인 상태<br>`binding_error`: 신규 인터넷 게이트웨이 서버에서 구성 중 오류 발생 |
+| internetgateway.migrate_error | Body | String | 점검으로 인한 인터넷 게이트웨이 이동 중 오류 발생 시 오류 메시지 |
 
 <details><summary>예시</summary>
 <p>
@@ -160,12 +160,12 @@ X-Auth-Token: {tokenId}
 | internetgateway.id | Body | UUID | 인터넷 게이트웨이 ID |
 | internetgateway.name | Body | String | 인터넷 게이트웨이 이름 |
 | internetgateway.external_network_id | Body | UUID | 인터넷 게이트웨이가 연결한 외부 네트워크의 ID |
-| internetgateway.routingtable_id | Body | UUID | 라우팅 테이블과 연결되어 있을 때, 인터넷 게이트웨이를 연결한 라우팅 테이블 ID |
-| internetgateway.state | Body | String | 인터넷 게이트웨이의 상태. <br>`available`: 정상 상태<br>`unavailable`: 라우팅 테이블에 연결되지 않은 미사용 상태<br>`migrating`: 점검을 위해 다른 인터넷 게이트웨이 서버로 이동중인 상태<br>`error`:  라우팅 테이블에 연결되었으나 정상 사용이 불가능한 상태|
+| internetgateway.routingtable_id | Body | UUID | 라우팅 테이블과 연결되어 있을 때 인터넷 게이트웨이를 연결한 라우팅 테이블 ID |
+| internetgateway.state | Body | String | 인터넷 게이트웨이의 상태. <br>`available`: 정상 상태<br>`unavailable`: 라우팅 테이블에 연결되지 않은 미사용 상태<br>`migrating`: 점검을 위해 다른 인터넷 게이트웨이 서버로 이동 중인 상태<br>`error`:  라우팅 테이블에 연결되었으나 정상 사용이 불가능한 상태|
 | internetgateway.create_time | Body | Date | 인터넷 게이트웨이 생성 시간(UTC) |
 | internetgateway.tenant_id | Body | String | 인터넷 게이트웨이가 속한 테넌트 ID |
-| internetgateway.migrate_status | Body | String | 점검으로 인한 인터넷 게이트웨이 이동 시 처리 상태<br>`none`: 이동중이지 않거나 이동이 완료된 상태<br>`unbinding_progress`: 기존 인터넷 게이트웨이 서버에서 제거 중인 상태<br>`unbinding_error`: 기존 인터넷 게이트웨이 서버에서 제거 중 오류 발생<br>`binding_progress`: 신규 인터넷 게이트웨이 서버에서 구성 중인 상태<br>`binding_error`: 신규 인터넷 게이트웨이 서버에서 구성 중 오류 발생 |
-| internetgateway.migrate_error | Body | String | 점검으로 인한 인터넷 게이트웨이 이동 중 오류 발생 시 오류 메시지.  |
+| internetgateway.migrate_status | Body | String | 점검으로 인한 인터넷 게이트웨이 이동 시 처리 상태<br>`none`: 이동 중이지 않거나 이동이 완료된 상태<br>`unbinding_progress`: 기존 인터넷 게이트웨이 서버에서 제거 중인 상태<br>`unbinding_error`: 기존 인터넷 게이트웨이 서버에서 제거 중 오류 발생<br>`binding_progress`: 신규 인터넷 게이트웨이 서버에서 구성 중인 상태<br>`binding_error`: 신규 인터넷 게이트웨이 서버에서 구성 중 오류 발생 |
+| internetgateway.migrate_error | Body | String | 점검으로 인한 인터넷 게이트웨이 이동 중 오류 발생 시 오류 메시지 |
 
 <details><summary>예시</summary>
 <p>
