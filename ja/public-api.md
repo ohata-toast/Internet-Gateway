@@ -1,3 +1,4 @@
+
 ## Network > Internet Gateway > API v2ガイド
 
 APIを使用するには、APIエンドポイントとトークンなどが必要です。 [API使用準備](/Compute/Compute/ja/identity-api/)を参考にしてAPI使用に必要な情報を準備します。
@@ -14,12 +15,14 @@ APIレスポンスにガイドに記載されていないフィールドが表�
 ### 外部ネットワークIDを照会する
 インターネットゲートウェイを作成する際、インターネットゲートウェイを介して接続する外部ネットワークのIDを指定する必要があります。
 使用可能な外部ネットワークは、[VPCリスト表示API](/Network/VPC/ja/public-api/#vpc_1)に`router:external=true`クエリを指定して照会できます。
+
 ```
 GET /v2.0/vpcs?router:external=true
 ```
 
 ### インターネットゲートウェイリスト表示
 利用可能なインターネットゲートウェイのリストを返します。
+
 ```
 GET /v2.0/internetgateways
 X-Auth-Token: {tokenId}
@@ -54,6 +57,7 @@ X-Auth-Token: {tokenId}
 | internetgateway.migrate_error | Body | String | 点検によるインターネットゲートウェイの移動中にエラーが発生した場合のエラーメッセージ |
 
 <details><summary>例</summary>
+
 <p>
 
 ```json
@@ -79,8 +83,10 @@ X-Auth-Token: {tokenId}
 
 ---
 
+
 ### インターネットゲートウェイ表示
 指定したインターネットゲートウェイを照会します。
+
 ```
 GET /v2.0/internetgateways/{internetgatewayId}
 X-Auth-Token: {tokenId}
@@ -110,7 +116,7 @@ X-Auth-Token: {tokenId}
 | internetgateway.migrate_status | Body | String | 点検によるインターネットゲートウェイ移行時の処理状態<br>`none`:移動中ではないか移動が完了した状態<br>`unbinding_progress`:既存インターネットゲートウェイサーバーから削除中の状態<br>`unbinding_error`:既存インターネットゲートウェイサーバーから削除中にエラーが発生<br>`binding_progress`:新規インターネットゲートウェイサーバーで構成中の状態<br>`binding_error`:新規インターネットゲートウェイサーバーで構成中にエラー発生 |
 | internetgateway.migrate_error | Body | String | 点検によるインターネットゲートウェイの移動中にエラーが発生した場合のエラーメッセージ |
 
-<details><summary>例</summary>
+<details><summary>例</summary>=
 <p>
 
 ```json
@@ -143,6 +149,7 @@ POST /v2.0/internetgateways
 X-Auth-Token: {tokenId}
 ```
 
+
 #### リクエスト
 
 | 名前 | 種類 | 形式 | 必須 | 説明 |
@@ -168,6 +175,7 @@ X-Auth-Token: {tokenId}
 | internetgateway.migrate_error | Body | String | 点検によるインターネットゲートウェイの移動中にエラーが発生した場合のエラーメッセージ |
 
 <details><summary>例</summary>
+
 <p>
 
 ```json
