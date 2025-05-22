@@ -1,6 +1,6 @@
 ## Network > Internet Gateway > API v2ガイド
 
-APIを使用するには、APIエンドポイントとトークンなどが必要です。 [API使用準備](/Compute/Compute/ko/identity-api/)を参考にしてAPI使用に必要な情報を準備します。
+APIを使用するには、APIエンドポイントとトークンなどが必要です。 [API使用準備](/Compute/Compute/ja/identity-api/)を参考にしてAPI使用に必要な情報を準備します。
 
 インターネットゲートウェイAPIは`network`タイプエンドポイントを利用します。正確なエンドポイントはトークン発行レスポンスの`serviceCatalog`を参照します。
 
@@ -13,7 +13,7 @@ APIレスポンスにガイドに記載されていないフィールドが表�
 ## インターネットゲートウェイ
 ### 外部ネットワークIDを照会する
 インターネットゲートウェイを作成する際、インターネットゲートウェイを介して接続する外部ネットワークのIDを指定する必要があります。
-使用可能な外部ネットワークは、[VPCリスト表示API](/Network/VPC/ko/public-api/#vpc_1)に`router:external=true`クエリを指定して照会できます。
+使用可能な外部ネットワークは、[VPCリスト表示API](/Network/VPC/ja/public-api/#vpc_1)に`router:external=true`クエリを指定して照会できます。
 ```
 GET /v2.0/vpcs?router:external=true
 ```
